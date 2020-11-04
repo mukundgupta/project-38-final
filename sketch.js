@@ -34,12 +34,14 @@ function setup() {
   createCanvas(600, 200);
   if(frameCount % 60 === 0) {
   obstacle = createSprite(650,165,10,40);
+  //obstacle.setCollider("rectangle",0,0,obstacle.width,obstacle.height);
   }
   obstacle.visible = false;
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided",trex_collided)
   trex.setCollider("rectangle",0,0,trex.width,trex.height);
+  trex.debug = true;
   trex.scale = 0.5;
   
   ground = createSprite(200,150,400,20);
@@ -164,6 +166,7 @@ function spawnClouds() {
 }
 
 function spawnObstacles() {
+ obstacle.debug = true;
  
     if(obstacle.x<camera.x-300){
     obstacle.x = 670;
@@ -185,16 +188,22 @@ function spawnObstacles() {
     var rand = Math.round(random(1,6));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
+      obstacle.setCollider("rectangle",0,0,obstacle1.width,obstacle1.height);
               break;
       case 2: obstacle.addImage(obstacle2);
+      obstacle.setCollider("rectangle",0,0,obstacle2.width,obstacle2.height);
               break;
       case 3: obstacle.addImage(obstacle3);
+      obstacle.setCollider("rectangle",0,0,obstacle3.width,obstacle3.height);
               break;
       case 4: obstacle.addImage(obstacle4);
+      obstacle.setCollider("rectangle",0,0,obstacle4.width,obstacle4.height);
               break;
       case 5: obstacle.addImage(obstacle5);
+      obstacle.setCollider("rectangle",0,0,obstacle5.width,obstacle5.height);
               break;
       case 6: obstacle.addImage(obstacle6);
+      obstacle.setCollider("rectangle",0,0,obstacle6.width,obstacle6.height);
               break;
       default: break;
     }

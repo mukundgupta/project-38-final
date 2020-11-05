@@ -41,7 +41,6 @@ function setup() {
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided",trex_collided)
   trex.setCollider("rectangle",0,0,trex.width,trex.height);
-  trex.debug = true;
   trex.scale = 0.5;
   
   ground = createSprite(200,150,400,20);
@@ -50,12 +49,12 @@ function setup() {
   ground.y = 180 ;
   
   
-  gameOver = createSprite(camera.x,100)
+  gameOver = createSprite(camera.x+40,80)
   gameOver.addImage("gameOver",gameOverImage)
   gameOver.scale = 0.5;
   gameOver.visible = false;
   
-  restart = createSprite(camera.x,180)
+  restart = createSprite(camera.x+40,150)
   restart.addImage("restart",restartImage)
   restart.scale = 0.5;
   restart.visible = false;
@@ -166,7 +165,6 @@ function spawnClouds() {
 }
 
 function spawnObstacles() {
- obstacle.debug = true;
  
     if(obstacle.x<camera.x-300){
     obstacle.x = 670;

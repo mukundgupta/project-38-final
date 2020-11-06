@@ -54,7 +54,7 @@ function setup() {
   gameOver.scale = 0.5;
   gameOver.visible = false;
   
-  restart = createSprite(camera.x+40,150)
+  restart = createSprite(camera.x+40,115)
   restart.addImage("restart",restartImage)
   restart.scale = 0.5;
   restart.visible = false;
